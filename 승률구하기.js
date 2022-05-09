@@ -4,7 +4,6 @@ function solution(weights, head2head){
 
     for(let i = 0; i< head2head.length; i++){
         win[i] = {idx:i+1, wins:0, heavy:0, weight:weights[i]};
-        
         let a = head2head[i].split('');
         for(let j = 0; j<a.length; j++){
             if(a[j]=="W"){
