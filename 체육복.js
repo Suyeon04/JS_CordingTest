@@ -1,15 +1,14 @@
 function solution(n, lost, reserve) {
-    var answer = 0;
+    var answer = n-lost.length;
     let y = 0;
-    for(let i = 0; i<n; i++){
-        if(i+1!=lost[y]){
-            answer++;
-        }else y++;
-    }
-    y = 0;
-    console.log(answer)
+    lost.sort(function(a, b)  {
+        return a - b;
+    });
+    reserve.sort(function(a, b)  {
+        return a - b;
+    });
     for(let i = 0; i<lost.length; i++){
-        for(let j = y; j<reserve;j++){
+        for(let j = y; j<reserve.length;j++){
             if(lost[i]==reserve[j]||lost[i]==reserve[j]+1||lost[i]==reserve[j]-1){
                 y++;
                 answer++;
